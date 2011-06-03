@@ -50,4 +50,4 @@ hex:  $(TARGET).hex
 	$(OBJCOPY) -j .text -j .data -O ihex $< $@
 
 prog:
-	avrdude -c arduino -p m88 -F -b 115200 -P COM6 -U flash:w:$(TARGET).hex
+	avrdude -c arduino -p m88 -F -b 115200 -P /dev/ttyUSB0 -U flash:w:$(TARGET).hex
